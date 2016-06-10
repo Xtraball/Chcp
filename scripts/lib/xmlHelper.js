@@ -4,8 +4,8 @@ Small helper class to read/write from/to xml file.
 (function() {
 
   var fs = require('fs'),
-    xml2jsProcessors = require('xml2js/lib/processors'),
-    xml2js = require('xml2js');
+    xml2jsProcessors = require('./processors'),
+    xml2js = require('./xml2js');
 
   module.exports = {
     readXmlAsJson: readXmlAsJson,

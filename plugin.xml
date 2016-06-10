@@ -29,7 +29,14 @@
 
   <!-- Hooks -->
   <hook src="scripts/afterPrepareHook.js" type="after_prepare"/>
+
+  <!-- START SIBERIAN CMS MODIFICATION
+  before install hook install xml2js depencency but we already add it into plugin
+  due to our custom cordova deployement installation
+
   <hook src="scripts/beforePluginInstallHook.js" type="before_plugin_install"/>
+
+  END SIBERIAN CMS MODIFICATION-->
 
   <platform name="ios">
 
