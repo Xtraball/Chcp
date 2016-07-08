@@ -41,15 +41,16 @@ public class AssetsHelper {
         if (isWorking) {
             return;
         }
+
         isWorking = true;
 
-        // notify, that we are starting assets installation
-        EventBus.getDefault().post(new BeforeAssetsInstalledEvent());
-
-        new Thread(new Runnable() {
+        final ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
+        executor.schedule(new Runnable() {
             @Override
             public void run() {
                 try {
+                    // notify, that we are starting assets installation
+                    EventBus.getDefault().post(new BeforeAssetsInstalledEvent());
                     copyAssetDirectory(assetManager, fromDirectory, toDirectory);
                     EventBus.getDefault().post(new AssetsInstalledEvent());
                 } catch (IOException e) {
@@ -59,7 +60,8 @@ public class AssetsHelper {
                     isWorking = false;
                 }
             }
-        }).start();
+        }, 6, TimeUnit.SECONDS);
+
     }
 
     private static void copyAssetDirectory(AssetManager assetManager, String fromDirectory, String toDirectory) throws IOException {
