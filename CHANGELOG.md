@@ -1,5 +1,44 @@
 # Change Log
 
+## 1.5.2 (2016-11-06)
+
+**Bug fixes:**
+
+- [Issue #213](https://github.com/nordnet/cordova-hot-code-push/issues/213). Large sync lead to timeout on iOS. Merged [pull request #217](https://github.com/nordnet/cordova-hot-code-push/pull/217), thanks to [@bbreijer](https://github.com/bbreijer). Now iOS version should be more memory efficient when loading large set of files. It also can now download large files.
+- Merged [pull request #218](https://github.com/nordnet/cordova-hot-code-push/pull/218). Fixes build failure on the after_prepare hook. Thanks to [@warent](https://github.com/warent).
+- [Issue #228](https://github.com/nordnet/cordova-hot-code-push/issues/228). Added missing error code `NEW_APPLICATION_CONFIG_IS_INVALID` to JS API.
+- [Issue #229](https://github.com/nordnet/cordova-hot-code-push/issues/229). Thanks to [@zwwhappy](https://github.com/zwwhappy) for [pull request #225](https://github.com/nordnet/cordova-hot-code-push/pull/225), and [@sfnt](https://github.com/sfnt) for [pull request #231](https://github.com/nordnet/cordova-hot-code-push/pull/231).
+
+## 1.5.1 (2016-09-06)
+
+**Bug fixes:**
+
+- Merged [pull request #205](https://github.com/nordnet/cordova-hot-code-push/pull/205). Fixes Android app crashes, when `content_url` is missing in server's `chcp.json` config. Thanks to [@Mikey1982](https://github.com/Mikey1982).
+- [Issue #208](https://github.com/nordnet/cordova-hot-code-push/issues/208). In some cases `plugins/ios.json` file couldn't be found by the hook, that checks, if `cordova-plugin-wkwebview-engine` plugin is installed in the project. Now hook will check for the plugin's folder directly.
+
+## 1.5.0 (2016-08-30)
+
+**Bug fixes:**
+
+- [Issue #197](https://github.com/nordnet/cordova-hot-code-push/issues/197). Android can now update files with spaces in their names.
+
+**Improvements:**
+
+- Merged [pull request #204](https://github.com/nordnet/cordova-hot-code-push/pull/204). Initial installation of the assets on the external storage on Android is now much faster. Thanks to [@Mikey1982](https://github.com/Mikey1982).
+- Added new JS method: `getVersionInfo`. Based on [pull request #170](https://github.com/nordnet/cordova-hot-code-push/pull/170) from [@Manduro](https://github.com/Manduro) - thank you. For documentation, please, refer to [wikki page](https://github.com/nordnet/cordova-hot-code-push/wiki/Get-version-information).
+
+## 1.4.0 (2016-06-21)
+
+**Bug fixes:**
+
+- [Issue #155](https://github.com/nordnet/cordova-hot-code-push/issues/155). Android app should not crash if server has a bad `chcp.json` file.
+
+**Improvements:**
+
+- [Issue #153](https://github.com/nordnet/cordova-hot-code-push/issues/153). You can now pass `chcp.json` file url into `fetchUpdate` method on JS side. Also, you can provide additional HTTP headers to the request. For example, authorization info. These headers will be used for loading configuration files and updated/changed files from your server. Thanks to [@davidovich](https://github.com/davidovich) for [pull request #150](https://github.com/nordnet/cordova-hot-code-push/pull/150).
+- [Issue #99](https://github.com/nordnet/cordova-hot-code-push/issues/99). iOS build version can now be a string. So, changing it from 1.0.0 to 1.0.1 will trigger reinstallation of `www` folder. Before that it had to be an integer.
+- [Issue #160](https://github.com/nordnet/cordova-hot-code-push/issues/160). Old releases are now gets removed after update installation. Previously cleanup was performed only on application restart.
+
 ## 1.3.2 (2016-04-27)
 
 **Bug fixes:**
