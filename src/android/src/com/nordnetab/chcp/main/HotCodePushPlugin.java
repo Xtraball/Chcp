@@ -315,8 +315,8 @@ public class HotCodePushPlugin extends CordovaPlugin {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                webView.clearHistory();
-
+                // Cleared for now as this throw an Exception!
+                //webView.clearHistory();
             }
         });
 

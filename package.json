@@ -1,9 +1,9 @@
 {
-  "name": "cordova-hot-code-push-plugin",
+  "name": "Chcp",
   "version": "1.5.2",
-  "description": "Cordova plugin to perform code updates on the fly",
+  "description": "Cordova Chcp",
   "cordova": {
-    "id": "cordova-hot-code-push-plugin",
+    "id": "Chcp",
     "platforms": [
       "android",
       "ios"
