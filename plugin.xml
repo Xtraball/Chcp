@@ -170,9 +170,6 @@
             </feature>
         </config-file>
 
-        <!-- Gradle config -->
-        <framework custom="true" src="src/android/chcp.gradle" type="gradleReference"/>
-
         <!-- Manifest changes -->
         <config-file parent="/manifest" target="app/src/main/AndroidManifest.xml">
             <uses-permission android:name="android.permission.INTERNET"/>
@@ -313,6 +310,9 @@
         <!-- sources for package: com.nordnetab.chcp -->
         <source-file src="src/android/src/com/nordnetab/chcp/main/HotCodePushPlugin.java"
                      target-dir="app/src/main/java/com/nordnetab/chcp/main"/>
+
+        <framework src="com.fasterxml.jackson.core:jackson-databind:2.4.4"/>
+        <framework src="org.greenrobot:eventbus:3.0.0"/>
 
     </platform>
 </plugin>
